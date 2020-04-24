@@ -2,7 +2,7 @@
 
 class ZoneFile {
 	private $domain = 'example.com.';
-	private $ttl = 60;
+	private $ttl = 60; //The default TTL, used when one is not specified for a record
 	private $records = [];
 	private $strlen_maxes = [
 		'name' => 0,
@@ -19,7 +19,7 @@ class ZoneFile {
 
 
 	private function addRecord($name, $ttl, $class, $type, $data){
-		$this->records[] = [
+		$this->records[]=[
 			'name' => $name,
 			'ttl' => $ttl,
 			'class' => $class,
@@ -75,21 +75,21 @@ class ZoneFile {
 
 
 	//Add a CNAME record
-	public function addCNAME($name, $cname, $ttl=NULL){
+	public function addCname($name, $cname, $ttl=NULL){
 		if( is_null($ttl) ) $ttl = $this->ttl;
 		$this->addRecord($name, $ttl, 'IN', 'CNAME', $cname);
 	}
 
 
 	//Add a TXT record
-	public function addTXT($name, $data, $ttl=NULL){
+	public function addTxt($name, $data, $ttl=NULL){
 		if( is_null($ttl) ) $ttl = $this->ttl;
 		$this->addRecord($name, $ttl, 'IN', 'TXT', "\"$data\"");
 	}
 
 
 	//Add a MX record
-	public function addMX($name, $pri, $server, $ttl=NULL){
+	public function addMx($name, $pri, $server, $ttl=NULL){
 		if( is_null($ttl) ) $ttl = $this->ttl;
 		$this->addRecord($name, $ttl, 'IN', 'MX', "$pri $server");
 	}
@@ -102,7 +102,7 @@ class ZoneFile {
 	}
 
 
-	//Generate the zone file
+	//Generates the zone file
 	public function output(){
 		$this->calculateStrlenMaxes();
 
@@ -114,12 +114,12 @@ class ZoneFile {
 OUTPUT;
 
 		foreach($this->records as $record){
-			$output.= $this->pad($record['name'], $this->strlen_maxes['name']);
-			$output.= $this->pad($record['ttl'], $this->strlen_maxes['ttl']);
-			$output.= $this->pad($record['class'], $this->strlen_maxes['class']);
-			$output.= $this->pad($record['type'], $this->strlen_maxes['type']);
-			$output.= $record['data'];
-			$output.= "\n";
+			$output.=$this->pad($record['name'], $this->strlen_maxes['name']);
+			$output.=$this->pad($record['ttl'], $this->strlen_maxes['ttl']);
+			$output.=$this->pad($record['class'], $this->strlen_maxes['class']);
+			$output.=$this->pad($record['type'], $this->strlen_maxes['type']);
+			$output.=$record['data'];
+			$output.="\n";
 		}
 
 		return $output;
