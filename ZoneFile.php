@@ -100,6 +100,30 @@ class ZoneFile {
 		if( is_null($ttl) ) $ttl = $this->ttl;
 		$this->addRecord('', $ttl, 'IN', 'NS', $ns);
 	}
+
+
+	//Generate the zone file
+	public function output(){
+		$this->calculateStrlenMaxes();
+
+		$output = <<<OUTPUT
+\$ORIGIN {$this->domain}
+\$TTL {$this->ttl}
+;{$this->domain}
+
+OUTPUT;
+
+		foreach($this->records as $record){
+			$output.= $this->pad($record['name'], $this->strlen_maxes['name']);
+			$output.= $this->pad($record['ttl'], $this->strlen_maxes['ttl']);
+			$output.= $this->pad($record['class'], $this->strlen_maxes['class']);
+			$output.= $this->pad($record['type'], $this->strlen_maxes['type']);
+			$output.= $record['data'];
+			$output.= "\n";
+		}
+
+		return $output;
+	}
 }
 
 ?>
