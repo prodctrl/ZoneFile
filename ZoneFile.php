@@ -58,6 +58,48 @@ class ZoneFile {
 
 		return $input . str_repeat("\t", $tabs_needed);
 	}
+
+
+	//Add an A record
+	public function addA($name, $ip, $ttl=NULL){
+		if( is_null($ttl) ) $ttl = $this->ttl;
+		$this->addRecord($name, $ttl, 'IN', 'A', $ip);
+	}
+
+
+	//Add an AAAA record
+	public function addAAAA($name, $ip, $ttl=NULL){
+		if( is_null($ttl) ) $ttl = $this->ttl;
+		$this->addRecord($name, $ttl, 'IN', 'AAAA', $ip);
+	}
+
+
+	//Add a CNAME record
+	public function addCNAME($name, $cname, $ttl=NULL){
+		if( is_null($ttl) ) $ttl = $this->ttl;
+		$this->addRecord($name, $ttl, 'IN', 'CNAME', $cname);
+	}
+
+
+	//Add a TXT record
+	public function addTXT($name, $data, $ttl=NULL){
+		if( is_null($ttl) ) $ttl = $this->ttl;
+		$this->addRecord($name, $ttl, 'IN', 'TXT', "\"$data\"");
+	}
+
+
+	//Add a MX record
+	public function addMX($name, $pri, $server, $ttl=NULL){
+		if( is_null($ttl) ) $ttl = $this->ttl;
+		$this->addRecord($name, $ttl, 'IN', 'MX', "$pri $server");
+	}
+
+
+	//Add a NS record
+	public function addNs($ns, $ttl=NULL){
+		if( is_null($ttl) ) $ttl = $this->ttl;
+		$this->addRecord('', $ttl, 'IN', 'NS', $ns);
+	}
 }
 
 ?>
