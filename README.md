@@ -22,3 +22,13 @@ echo $zone_file->output();
 
 ?>
 ```
+
+#### Output
+
+```
+$ORIGIN example.com.
+$TTL 180
+;example.com.
+www		120		IN		A		151.101.193.67
+www		120		IN		AAAA		2a04:4e42:400::323
+```
