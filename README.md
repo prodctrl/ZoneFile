@@ -125,3 +125,21 @@ $zone_file->addCname('ww4', 'www5.example.com.');
 
 ?>
 ```
+
+
+#### push-to-route-53.sh
+
+This shell script pushes a DNS zone file to AWS Route 53
+
+##### Requirements
+- [`awscli`](https://aws.amazon.com/cli/) package
+- [`php-cli`](https://www.php.net/manual/en/features.commandline.php) package
+
+##### Example
+
+```sh
+#!/bin/sh
+
+php zone-file-generator.php > ~/zonefile.txt
+sh push-to-route-53.sh example.com ~/zonefile.txt
+```
