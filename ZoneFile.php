@@ -98,7 +98,7 @@ class ZoneFile {
 	//Add a NS record
 	public function addNs($ns, $ttl=NULL){
 		if( is_null($ttl) ) $ttl = $this->ttl;
-		$this->addRecord('', $ttl, 'IN', 'NS', $ns);
+		$this->addRecord($this->domain . '.', $ttl, 'IN', 'NS', $ns);
 	}
 
 
