@@ -104,3 +104,24 @@ $zone_file->addAAAA('www1.example.com.', '2606:2800:220:1:248:1893:25c8:1946');
 
 ?>
 ```
+
+
+#### addCname(str `name`, str `cname`[, int `ttl`]) Method
+- `name` - the host name.  This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
+- `cname` - the host name.  This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
+- `ttl` (optional) - the time to live (TTL), in seconds, for the record.  If not specified, the zone file's default `ttl` will be used
+
+
+##### Example
+```php
+<?php
+
+require('ZoneFile.php');
+
+$zone_file = new ZoneFile('example.com.', 240);
+$zone_file->addCname('www', 'www1', 180);
+$zone_file->addCname('www2.example.com.', 'www3');
+$zone_file->addCname('ww4', 'www5.example.com.');
+
+?>
+```
