@@ -48,7 +48,7 @@ www		120		IN		AAAA		2606:2800:220:1:248:1893:25c8:1946
 
 ## API Reference
 
-#### ZoneFile(str `domain`[, int `ttl`])
+#### ZoneFile(str `domain`[, int `ttl`]) Class
 - `domain` - the domain the zone file is being generated for.  This must be a fully qualified domain name that ends with a period (i.e. `example.com.`)
 - `ttl` (optional) - the time to live (TTL), in seconds, that will be used for records where a TTL is not specified.  The default value is `60`
 
