@@ -34,7 +34,7 @@ echo $zone_file->output();
 ?>
 ```
 
-#### Output
+The above code generates the output below:
 
 ```
 $ORIGIN example.com.
