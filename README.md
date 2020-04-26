@@ -17,7 +17,7 @@ A simple PHP library for generating DNS zone files.
 - Not necessarily fully [RFC 1035](https://tools.ietf.org/html/rfc1035)/[RFC 1034](https://tools.ietf.org/html/rfc1034) compliant
 
 
-## Usage
+## Example
 
 ```php
 <?php
