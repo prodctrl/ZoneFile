@@ -148,6 +148,28 @@ $zone_file->addTxt('www1.example.com.', 'key=value');
 ```
 
 
+#### addMx(str `name`, int `pri`, str `server`[, int `ttl`]) Method
+- `name` - the host name.  This can be a relative host name (i.e. `mail`) or a fully qualified domain name that ends with a period (i.e. `example.com.`)
+- `pri` - the MX record's priority
+- `server` - the host name of the mail server.  This can be a relative host name (i.e. `mail`) or a fully qualified domain name that ends with a period (i.e. `mail.example.com.`)
+- `ttl` (optional) - the time to live (TTL), in seconds, for the record.  If not specified, the zone file's default `ttl` will be used
+
+
+##### Example
+```php
+<?php
+
+require('ZoneFile.php');
+
+$zone_file = new ZoneFile('example.com.', 240);
+$zone_file->addMx('example.com.', 10, 'mail', 120);
+$zone_file->addMx('example.com.', 10, 'mail1.example.com');
+$zone_file->addMx('example.com.', 20, 'mail2.example.com');
+
+?>
+```
+
+
 #### push-to-route-53.sh
 
 This shell script pushes a DNS zone file to AWS Route 53
