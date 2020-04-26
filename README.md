@@ -63,3 +63,23 @@ $zone_file = new ZoneFile('example.com.', 240);
 
 ?>
 ```
+
+#### addA(str `name`, str `ip`[, int `ttl`]) Method
+- `name` - the host name.  This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
+- `ip` - the IPv4 address
+- `ttl` (optional) - the time to live (TTL), in seconds, for the record.  If not specified, the zone file's default `ttl` will be used
+
+
+##### Example
+```php
+<?php
+
+require('ZoneFile.php');
+
+$zone_file = new ZoneFile('example.com.', 240);
+$zone_file->addA('', '93.184.216.34', 120);
+$zone_file->addA('www', '93.184.216.34', 180);
+$zone_file->addA('www1.example.com.', '93.184.216.34');
+
+?>
+```
