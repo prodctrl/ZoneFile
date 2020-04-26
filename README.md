@@ -46,3 +46,23 @@ $TTL 180
 www		120		IN		A		151.101.193.67
 www		120		IN		AAAA		2a04:4e42:400::323
 ```
+
+
+
+## API Reference
+
+#### ZoneFile(str `domain`[, int `ttl`])
+- `domain` - the domain the zone file is being generated for.  This must be a fully qualified domain name that ends with a period (i.e. `example.com.`)
+- `ttl` (optional) - the time to live (TTL), in seconds, that will be used for records where a TTL is not specified.  The default value is `60`
+
+
+##### Example
+```php
+<?php
+
+require('ZoneFile.php');
+
+$zone_file = new ZoneFile('example.com.', 240);
+
+?>
+```
