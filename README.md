@@ -127,6 +127,27 @@ $zone_file->addCname('ww4', 'www5.example.com.');
 ```
 
 
+#### addTxt(str `name`, str `data`[, int `ttl`]) Method
+- `name` - the host name.  This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
+- `data` - the data
+- `ttl` (optional) - the time to live (TTL), in seconds, for the record.  If not specified, the zone file's default `ttl` will be used
+
+
+##### Example
+```php
+<?php
+
+require('ZoneFile.php');
+
+$zone_file = new ZoneFile('example.com.', 240);
+$zone_file->addTxt('', 'key=value', 120);
+$zone_file->addTxt('www', 'key=value', 180);
+$zone_file->addTxt('www1.example.com.', 'key=value');
+
+?>
+```
+
+
 #### push-to-route-53.sh
 
 This shell script pushes a DNS zone file to AWS Route 53
