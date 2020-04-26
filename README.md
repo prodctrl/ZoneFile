@@ -26,8 +26,8 @@ require('ZoneFile.php');
 
 $zone_file = new ZoneFile('example.com.', 180);
 
-$zone_file->addA('www', '151.101.193.67', 120);
-$zone_file->addAAAA('www', '2a04:4e42:400::323', 120);
+$zone_file->addA('www', '93.184.216.34', 120);
+$zone_file->addAAAA('www', '2606:2800:220:1:248:1893:25c8:1946', 120);
 
 echo $zone_file->output();
 
@@ -40,8 +40,8 @@ echo $zone_file->output();
 $ORIGIN example.com.
 $TTL 180
 ;example.com.
-www		120		IN		A		151.101.193.67
-www		120		IN		AAAA		2a04:4e42:400::323
+www		120		IN		A		93.184.216.34
+www		120		IN		AAAA		2606:2800:220:1:248:1893:25c8:1946
 ```
 
 
