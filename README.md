@@ -77,7 +77,7 @@ $zone_file = new ZoneFile('example.com.', 240);
 require('ZoneFile.php');
 
 $zone_file = new ZoneFile('example.com.', 240);
-$zone_file->addA('', '93.184.216.34', 120);
+$zone_file->addA('example.com.', '93.184.216.34', 120);
 $zone_file->addA('www', '93.184.216.34', 180);
 $zone_file->addA('www1.example.com.', '93.184.216.34');
 
@@ -98,7 +98,7 @@ $zone_file->addA('www1.example.com.', '93.184.216.34');
 require('ZoneFile.php');
 
 $zone_file = new ZoneFile('example.com.', 240);
-$zone_file->addAAAA('', '2606:2800:220:1:248:1893:25c8:1946', 120);
+$zone_file->addAAAA('example.com.', '2606:2800:220:1:248:1893:25c8:1946', 120);
 $zone_file->addAAAA('www', '2606:2800:220:1:248:1893:25c8:1946', 180);
 $zone_file->addAAAA('www1.example.com.', '2606:2800:220:1:248:1893:25c8:1946');
 
@@ -140,7 +140,7 @@ $zone_file->addCname('ww4', 'www5.example.com.');
 require('ZoneFile.php');
 
 $zone_file = new ZoneFile('example.com.', 240);
-$zone_file->addTxt('', 'key=value', 120);
+$zone_file->addTxt('example.com.', 'key=value', 120);
 $zone_file->addTxt('www', 'key=value', 180);
 $zone_file->addTxt('www1.example.com.', 'key=value');
 
