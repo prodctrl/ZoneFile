@@ -188,6 +188,37 @@ $zone_file->addNs('example.com.', 'ns.nameserver.com.', 120);
 ```
 
 
+#### output() Method
+Outputs the zone file
+
+
+##### Example
+```php
+<?php
+
+require('ZoneFile.php');
+
+$zone_file = new ZoneFile('example.com.', 180);
+
+$zone_file->addA('www', '93.184.216.34', 120);
+$zone_file->addAAAA('www', '2606:2800:220:1:248:1893:25c8:1946', 120);
+
+echo $zone_file->output();
+
+?>
+```
+
+The above code generates the output below:
+
+```
+$ORIGIN example.com.
+$TTL 180
+;example.com.
+www		120		IN		A		93.184.216.34
+www		120		IN		AAAA		2606:2800:220:1:248:1893:25c8:1946
+```
+
+
 #### push-to-route-53.sh
 
 This shell script pushes a DNS zone file to AWS Route 53
