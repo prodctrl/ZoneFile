@@ -170,6 +170,24 @@ $zone_file->addMx('example.com.', 20, 'mail2.example.com');
 ```
 
 
+#### addNs(str `ns`[, int `ttl`]) Method
+- `ns` - the host name of the name server.  This must be a fully qualified domain name that ends with a period (i.e. `ns.nameserver.com.`)
+- `ttl` (optional) - the time to live (TTL), in seconds, for the record.  If not specified, the zone file's default `ttl` will be used
+
+
+##### Example
+```php
+<?php
+
+require('ZoneFile.php');
+
+$zone_file = new ZoneFile('example.com.', 240);
+$zone_file->addNs('example.com.', 'ns.nameserver.com.', 120);
+
+?>
+```
+
+
 #### push-to-route-53.sh
 
 This shell script pushes a DNS zone file to AWS Route 53
