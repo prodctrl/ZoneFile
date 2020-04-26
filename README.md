@@ -64,6 +64,8 @@ $zone_file = new ZoneFile('example.com.', 240);
 ?>
 ```
 
+---
+
 #### addA(str `name`, str `ip`[, int `ttl`]) Method
 - `name` - the host name.  This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
 - `ip` - the IPv4 address
@@ -84,6 +86,7 @@ $zone_file->addA('www1.example.com.', '93.184.216.34');
 ?>
 ```
 
+---
 
 #### addAAAA(str `name`, str `ip`[, int `ttl`]) Method
 - `name` - the host name.  This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
@@ -105,6 +108,7 @@ $zone_file->addAAAA('www1.example.com.', '2606:2800:220:1:248:1893:25c8:1946');
 ?>
 ```
 
+---
 
 #### addCname(str `name`, str `cname`[, int `ttl`]) Method
 - `name` - the host name.  This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
@@ -126,6 +130,7 @@ $zone_file->addCname('ww4', 'www5.example.com.');
 ?>
 ```
 
+---
 
 #### addTxt(str `name`, str `data`[, int `ttl`]) Method
 - `name` - the host name.  This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
@@ -146,6 +151,8 @@ $zone_file->addTxt('www1.example.com.', 'key=value');
 
 ?>
 ```
+
+---
 
 
 #### addMx(str `name`, int `pri`, str `server`[, int `ttl`]) Method
@@ -169,6 +176,8 @@ $zone_file->addMx('example.com.', 20, 'mail2.example.com');
 ?>
 ```
 
+---
+
 
 #### addNs(str `ns`[, int `ttl`]) Method
 - `ns` - the host name of the name server.  This must be a fully qualified domain name that ends with a period (i.e. `ns.nameserver.com.`)
@@ -186,6 +195,8 @@ $zone_file->addNs('example.com.', 'ns.nameserver.com.', 120);
 
 ?>
 ```
+
+---
 
 
 #### output() Method
