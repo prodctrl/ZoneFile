@@ -170,8 +170,8 @@ require('ZoneFile.php');
 
 $zone_file = new ZoneFile('example.com.', 240);
 $zone_file->addMx('example.com.', 10, 'mail', 120);
-$zone_file->addMx('example.com.', 10, 'mail1.example.com');
-$zone_file->addMx('example.com.', 20, 'mail2.example.com');
+$zone_file->addMx('example.com.', 10, 'mail1.example.com.');
+$zone_file->addMx('example.com.', 20, 'mail2.example.com.');
 
 ?>
 ```
