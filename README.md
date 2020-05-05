@@ -46,7 +46,7 @@ www		120		IN		AAAA		2606:2800:220:1:248:1893:25c8:1946
 
 
 
-## API Reference
+## ZoneFile.php
 
 #### ZoneFile(str `domain`[, int `ttl`]) Class
 - `domain` - the domain the zone file is being generated for.  This must be a fully qualified domain name that ends with a period (i.e. `example.com.`)
@@ -230,15 +230,15 @@ www		120		IN		AAAA		2606:2800:220:1:248:1893:25c8:1946
 ```
 
 
-#### push-to-route-53.sh
+## push-to-route-53.sh
 
 This shell script pushes a DNS zone file to AWS Route 53
 
-##### Requirements
+### Requirements
 - [`awscli`](https://aws.amazon.com/cli/) package
 - [`php-cli`](https://www.php.net/manual/en/features.commandline.php) package
 
-##### Example
+### Example
 
 ```sh
 #!/bin/sh
