@@ -43,3 +43,26 @@ fi
 domain="$1"
 github_username="$2"
 github_repo="$3"
+
+
+# Paths
+dir_folder="/tmp/ZoneFile"
+dir_zone_file_repo="$dir_folder/repo"
+dir_domain="$dir_folder/$domain"
+dir_github_repo="$dir_domain/repo"
+dir_output="$dir_domain/`date +%Y-%m-%d-%H-%M-%S`"
+zone_file_output="$dir_output/zone_file.txt"
+
+
+sleep 1
+
+
+# Delete directories
+echo "${style_advisory}Deleting directories...${style_reset}"
+rm -rf $dir_zone_file_repo/ $dir_github_repo/
+sleep 1
+
+# Make directories
+echo "${style_advisory}Creating directories...${style_reset}"
+mkdir -p $dir_domain/ $dir_output/
+sleep 1
