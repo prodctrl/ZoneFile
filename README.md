@@ -230,6 +230,20 @@ www		120		IN		AAAA		2606:2800:220:1:248:1893:25c8:1946
 ```
 
 
+## generate-zone-file.sh
+
+TODO
+
+### Example
+```sh
+#!/bin/sh
+
+curl https://raw.githubusercontent.com/prodctrl/ZoneFile/master/generate-zone-file.sh > ~/generate-zone-file.sh
+
+sh ~/generate-zone-file.sh productioncontrol.tv prodctrl dns
+```
+
+
 ## push-to-route-53.sh
 
 This shell script pushes a DNS zone file to AWS Route 53
