@@ -94,3 +94,29 @@ echo "${style_special}"
 cat $zone_file_output
 echo "${style_reset}"
 sleep 1
+
+
+# Push to Route 53?
+while true; do
+	read -p "Push to Route 53? (y/n) " push_to_route_53
+	case $push_to_route_53 in
+		[Yy]* )
+			echo
+			echo "${style_advisory}Pushing to Route 53...${style_reset}"
+			cli53 import $domain --file $zone_file_output --replace --wait
+			sleep 1
+			break;;
+		[Nn]* )
+			echo
+			echo "${style_advisory}Zone file NOT pushed to Route 53${style_reset}"
+			break;;
+		* )
+			echo
+			echo "${style_error}Please answer \"y\" for yes or \"n\" for no${style_reset}"
+	esac
+done
+
+
+# Done
+echo
+echo "${style_success}Done${style_reset}"
