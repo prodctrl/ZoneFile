@@ -78,3 +78,19 @@ echo
 echo "${style_advisory} Cloning $github_username/$github_repo.git...${style_reset}"
 git clone git@github.com:$github_username/$github_repo.git $dir_github_repo
 sleep 1
+
+
+# Generate zone file
+echo
+echo "${style_advisory}Generating zone file...${style_reset}"
+php $dir_github_repo/zone-file-generator.php > $zone_file_output
+sleep 1
+
+echo
+echo "${style_advisory}Zone file saved to $zone_file_output${style_reset}"
+sleep 1
+
+echo "${style_special}"
+cat $zone_file_output
+echo "${style_reset}"
+sleep 1
