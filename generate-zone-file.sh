@@ -63,6 +63,7 @@ rm -rf $dir_zone_file_repo/ $dir_github_repo/
 sleep 1
 
 # Make directories
+echo
 echo "${style_advisory}Creating directories...${style_reset}"
 mkdir -p $dir_domain/ $dir_output/
 sleep 1
