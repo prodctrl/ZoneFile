@@ -62,6 +62,7 @@ echo "${style_advisory}Deleting directories...${style_reset}"
 rm -rf $dir_zone_file_repo/ $dir_github_repo/
 sleep 1
 
+
 # Make directories
 echo
 echo "${style_advisory}Creating directories...${style_reset}"
