@@ -66,3 +66,15 @@ sleep 1
 echo "${style_advisory}Creating directories...${style_reset}"
 mkdir -p $dir_domain/ $dir_output/
 sleep 1
+
+
+# Clone repos
+echo
+echo "${style_advisory} Cloning prodctrl/ZoneFile.git...${style_reset}"
+git clone git@github.com:prodctrl/ZoneFile.git $dir_zone_file_repo
+sleep 1
+
+echo
+echo "${style_advisory} Cloning $github_username/$github_repo.git...${style_reset}"
+git clone git@github.com:$github_username/$github_repo.git $dir_github_repo
+sleep 1
