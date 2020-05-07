@@ -13,6 +13,11 @@ A simple PHP library for generating DNS zone files.
 - [RFC 1035](https://tools.ietf.org/html/rfc1035)/[RFC 1034](https://tools.ietf.org/html/rfc1034) compliant-*ish*
 
 
+## Requirements
+- [`php-cli`](https://www.php.net/manual/en/features.commandline.php) package
+- [`awscli`](https://aws.amazon.com/cli/) package (if using the deploy to Route 53 feature)
+
+
 ## Example
 
 ```php
@@ -242,10 +247,6 @@ sh ~/generate-zone-file.sh productioncontrol.tv prodctrl dns
 ## push-to-route-53.sh
 
 This shell script pushes a DNS zone file to AWS Route 53
-
-### Requirements
-- [`awscli`](https://aws.amazon.com/cli/) package
-- [`php-cli`](https://www.php.net/manual/en/features.commandline.php) package
 
 ### Example
 
