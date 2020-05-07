@@ -233,14 +233,20 @@ www		120		IN		AAAA		2606:2800:220:1:248:1893:25c8:1946
 
 ## generate-zone-file.sh
 
-TODO
+This shell script further automates the process of generating a DNS zone file, and optionally, pushing it to Route 53.
+
+It requires that you have a GitHub repository, like [this](https://github.com/prodctrl/dns-example), with all of your DNS records in a file named `generate-zone-file.php`.  The repo can be public, or private (assuming you have access).
+
+### Command-Line Parameters
+- `domain` - the domain the zone file is being generated for.  This must be a fully qualified domain name that ends with a period (i.e. `productioncontrol.tv.`)
+- `github_repo` - the GitHub repository (username/repo) that contains your `generate-zone-file.php` file (i.e. `prodctrl/dns-example`)
 
 ### Example
 ```sh
 #!/bin/sh
 
 curl https://raw.githubusercontent.com/prodctrl/ZoneFile/master/generate-zone-file.sh > ~/generate-zone-file.sh
-sh ~/generate-zone-file.sh productioncontrol.tv. prodctrl/dns
+sh ~/generate-zone-file.sh productioncontrol.tv. prodctrl/dns-example
 ```
 
 
