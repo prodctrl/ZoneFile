@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Usage:
-	# sh generate-zone-file.sh domain_name github_username github_repo
+	# sh generate-zone-file.sh domain_name github_repo
 
 # Example:
-	# sh generate-zone-file.sh productioncontrol.tv prodctrl dns
+	# sh generate-zone-file.sh productioncontrol.tv prodctrl/dns
 
 # Note:
 	# Do not include a period at the end of the domain name
@@ -19,16 +19,16 @@ style_special="\e[1;94m"
 
 
 # If required parameters are missing...
-if [ -z "$1" -o -z "$2" -o -z "$3" ] ; then
+if [ -z "$1" -o -z "$2" ] ; then
 	# Display an error message
 	echo
 	echo "${style_error}Required parameters missing!${style_reset}"
 	echo
 	echo "	${style_success}Example:"
-	echo "		sh generate-zone-file.sh productioncontrol.tv prodctrl dns${style_reset}"
+	echo "		sh generate-zone-file.sh productioncontrol.tv prodctrl/dns${style_reset}"
 	echo
 	echo "	Syntax:"
-	echo "		sh generate-zone-file.sh domain_name github_username github_repo"
+	echo "		sh generate-zone-file.sh domain_name github_repo"
 	echo
 	echo "	${style_advisory}Note:"
 	echo "		Do not include a period at the end of the domain name${style_reset}"
@@ -41,8 +41,7 @@ fi
 
 # Assign parameters to variables
 domain="$1"
-github_username="$2"
-github_repo="$3"
+github_repo="$2"
 
 
 # Paths
@@ -77,8 +76,8 @@ git clone git@github.com:prodctrl/ZoneFile.git $dir_zone_file_repo
 sleep 1
 
 echo
-echo "${style_advisory}Cloning $github_username/$github_repo.git...${style_reset}"
-git clone git@github.com:$github_username/$github_repo.git $dir_github_repo
+echo "${style_advisory}Cloning $github_repo.git...${style_reset}"
+git clone git@github.com:$github_repo.git $dir_github_repo
 sleep 1
 
 

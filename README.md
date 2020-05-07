@@ -240,7 +240,7 @@ TODO
 #!/bin/sh
 
 curl https://raw.githubusercontent.com/prodctrl/ZoneFile/master/generate-zone-file.sh > ~/generate-zone-file.sh
-sh ~/generate-zone-file.sh productioncontrol.tv prodctrl dns
+sh ~/generate-zone-file.sh productioncontrol.tv prodctrl/dns
 ```
 
 
