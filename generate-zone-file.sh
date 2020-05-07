@@ -4,10 +4,7 @@
 	# sh generate-zone-file.sh domain_name github_repo
 
 # Example:
-	# sh generate-zone-file.sh productioncontrol.tv prodctrl/dns
-
-# Note:
-	# Do not include a period at the end of the domain name
+	# sh generate-zone-file.sh productioncontrol.tv. prodctrl/dns
 
 
 # Command-line styles
@@ -25,13 +22,10 @@ if [ -z "$1" -o -z "$2" ] ; then
 	echo "${style_error}Required parameters missing!${style_reset}"
 	echo
 	echo "	${style_success}Example:"
-	echo "		sh generate-zone-file.sh productioncontrol.tv prodctrl/dns${style_reset}"
+	echo "		sh generate-zone-file.sh productioncontrol.tv. prodctrl/dns${style_reset}"
 	echo
 	echo "	Syntax:"
 	echo "		sh generate-zone-file.sh domain_name github_repo"
-	echo
-	echo "	${style_advisory}Note:"
-	echo "		Do not include a period at the end of the domain name${style_reset}"
 	echo
 
 	# Exit
@@ -41,13 +35,14 @@ fi
 
 # Assign parameters to variables
 domain="$1"
+domain_wo_period=$(php util/remove-trailing-period.php "$domain")
 github_repo="$2"
 
 
 # Paths
 dir_folder="/tmp/ZoneFile"
 dir_zone_file_repo="$dir_folder/repo"
-dir_domain="$dir_folder/$domain"
+dir_domain="$dir_folder/$domain_wo_period"
 dir_github_repo="$dir_domain/repo"
 dir_output="$dir_domain/`date +%Y-%m-%d-%H-%M-%S`"
 zone_file_output="$dir_output/zone_file.txt"
@@ -104,7 +99,7 @@ while true; do
 		[Yy]* )
 			echo
 			echo "${style_advisory}Pushing to Route 53...${style_reset}"
-			cli53 import $domain --file $zone_file_output --replace --wait
+			cli53 import $domain_wo_period --file $zone_file_output --replace --wait
 			sleep 1
 			break;;
 		[Nn]* )
