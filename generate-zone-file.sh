@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Usage:
-	# sh generate-zone-file.sh domain_name github_repo
+# sh generate-zone-file.sh domain_name github_repo
 
 # Example:
-	# sh generate-zone-file.sh productioncontrol.tv. prodctrl/dns-example
+# sh generate-zone-file.sh productioncontrol.tv. prodctrl/dns-example
 
 
 # Command-line styles
