@@ -35,7 +35,7 @@ fi
 
 # Assign parameters to variables
 domain="$1"
-domain_wo_period=$(php util/remove-trailing-period.php "$domain")
+domain_wo_period=$(echo "$domain" | sed s/.$//)
 github_repo="$2"
 
 
