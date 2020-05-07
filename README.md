@@ -10,7 +10,7 @@ A simple PHP library for generating DNS zone files.
 	- [AWS Route 53](https://aws.amazon.com/route53/)
 	- [DNS Made Easy](https://dnsmadeeasy.com/)
 - Shell script to deploy to Route 53
-- [RFC 1035](https://tools.ietf.org/html/rfc1035)/[RFC 1034](https://tools.ietf.org/html/rfc1034) compliant*-ish*
+- [RFC 1035](https://tools.ietf.org/html/rfc1035)/[RFC 1034](https://tools.ietf.org/html/rfc1034) compliant-*ish*
 
 
 ## Example
