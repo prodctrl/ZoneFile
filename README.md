@@ -238,15 +238,15 @@ This shell script further automates the process of generating a DNS zone file, a
 It requires that you have a GitHub repository, like [this](https://github.com/prodctrl/dns-example), with all of your DNS records in a file named `generate-zone-file.php`.  The repo can be public, or private (assuming you have access).
 
 ### Command-Line Parameters
-- `domain` - the domain the zone file is being generated for.  This must be a fully qualified domain name that ends with a period (i.e. `productioncontrol.tv.`)
-- `github_repo` - the GitHub repository (username/repo) that contains your `generate-zone-file.php` file (i.e. `prodctrl/dns-example`)
+- `domain` - the domain the zone file is being generated for.  This must be a fully qualified domain name that ends with a period (i.e. `example.com.`)
+- `github_repo` - the GitHub repository that contains your `generate-zone-file.php` file (i.e. `github-username/github-repo-name`)
 
 ### Example
 ```sh
 #!/bin/sh
 
 curl https://raw.githubusercontent.com/prodctrl/ZoneFile/master/generate-zone-file.sh > ~/generate-zone-file.sh
-sh ~/generate-zone-file.sh productioncontrol.tv. prodctrl/dns-example
+sh ~/generate-zone-file.sh example.com. github-username/github-repo-name
 ```
 
 
