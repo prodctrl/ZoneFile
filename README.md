@@ -240,7 +240,7 @@ It requires that you have a GitHub repository, like [this](https://github.com/pr
 ### Command-Line Parameters
 - `domain` - the domain the zone file is being generated for.  This must be a fully qualified domain name that ends with a period (i.e. `example.com.`)
 - `github_repo` - the GitHub repository that contains your `zone-file-generator.php` file (i.e. `github-username/github-repo-name`)
-- `argX` (optional) - you can pass up to 32 custom arguments to `zone-file-generator.php`.  These will be accessible in PHP using the `$argv[]` array (indexes 3-34), and the values can be pretty much whatever you want.  This feature is useful when the output of your `zone-file-generator.php` script is dynamic
+- `argX` (optional) - you can pass up to 32 custom arguments to `zone-file-generator.php`.  These will be accessible in PHP using the `$argv[]` array (indexes 1-32), and the values can be pretty much whatever you want.  This feature is useful when the output of your `zone-file-generator.php` script is dynamic
 
 ### Example
 #### Without Custom Arguments
