@@ -50,8 +50,8 @@ www		120		IN		AAAA		2606:2800:220:1:248:1893:25c8:1946
 ## ZoneFile.php
 
 #### ZoneFile(str `domain`[, int `ttl`]) Class
-- `domain` - the domain the zone file is being generated for.  This must be a fully qualified domain name that ends with a period (i.e. `example.com.`)
-- `ttl` (optional) - the time to live (TTL), in seconds, that will be used for records where a TTL is not specified.  The default value is `60`
+- `domain` - the domain the zone file is being generated for. This must be a fully qualified domain name that ends with a period (i.e. `example.com.`)
+- `ttl` (optional) - the time to live (TTL), in seconds, that will be used for records where a TTL is not specified. The default value is `60`
 
 
 ##### Example
@@ -68,9 +68,9 @@ $zone_file = new ZoneFile('example.com.', 240);
 ---
 
 #### addA(str `name`, str `ip`[, int `ttl`]) Method
-- `name` - the host name.  This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
+- `name` - the host name. This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
 - `ip` - the IPv4 address
-- `ttl` (optional) - the time to live (TTL), in seconds, for the record.  If not specified, the zone file's default `ttl` will be used
+- `ttl` (optional) - the time to live (TTL), in seconds, for the record. If not specified, the zone file's default `ttl` will be used
 
 
 ##### Example
@@ -90,9 +90,9 @@ $zone_file->addA('www1.example.com.', '93.184.216.34');
 ---
 
 #### addAAAA(str `name`, str `ip`[, int `ttl`]) Method
-- `name` - the host name.  This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
+- `name` - the host name. This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
 - `ip` - the IPv6 address
-- `ttl` (optional) - the time to live (TTL), in seconds, for the record.  If not specified, the zone file's default `ttl` will be used
+- `ttl` (optional) - the time to live (TTL), in seconds, for the record. If not specified, the zone file's default `ttl` will be used
 
 
 ##### Example
@@ -112,9 +112,9 @@ $zone_file->addAAAA('www1.example.com.', '2606:2800:220:1:248:1893:25c8:1946');
 ---
 
 #### addCname(str `name`, str `cname`[, int `ttl`]) Method
-- `name` - the host name.  This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
-- `cname` - the host name.  This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
-- `ttl` (optional) - the time to live (TTL), in seconds, for the record.  If not specified, the zone file's default `ttl` will be used
+- `name` - the host name. This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
+- `cname` - the host name. This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
+- `ttl` (optional) - the time to live (TTL), in seconds, for the record. If not specified, the zone file's default `ttl` will be used
 
 
 ##### Example
@@ -134,9 +134,9 @@ $zone_file->addCname('ww4', 'www5.example.com.');
 ---
 
 #### addTxt(str `name`, str `data`[, int `ttl`]) Method
-- `name` - the host name.  This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
+- `name` - the host name. This can be a relative host name (i.e. `www`) or a fully qualified domain name that ends with a period (i.e. `www.example.com.`)
 - `data` - the data
-- `ttl` (optional) - the time to live (TTL), in seconds, for the record.  If not specified, the zone file's default `ttl` will be used
+- `ttl` (optional) - the time to live (TTL), in seconds, for the record. If not specified, the zone file's default `ttl` will be used
 
 
 ##### Example
@@ -157,10 +157,10 @@ $zone_file->addTxt('www1.example.com.', 'key=value');
 
 
 #### addMx(str `name`, int `pri`, str `server`[, int `ttl`]) Method
-- `name` - the host name.  This can be a relative host name (i.e. `mail`) or a fully qualified domain name that ends with a period (i.e. `example.com.`)
+- `name` - the host name. This can be a relative host name (i.e. `mail`) or a fully qualified domain name that ends with a period (i.e. `example.com.`)
 - `pri` - the MX record's priority
-- `server` - the host name of the mail server.  This can be a relative host name (i.e. `mail`) or a fully qualified domain name that ends with a period (i.e. `mail.example.com.`)
-- `ttl` (optional) - the time to live (TTL), in seconds, for the record.  If not specified, the zone file's default `ttl` will be used
+- `server` - the host name of the mail server. This can be a relative host name (i.e. `mail`) or a fully qualified domain name that ends with a period (i.e. `mail.example.com.`)
+- `ttl` (optional) - the time to live (TTL), in seconds, for the record. If not specified, the zone file's default `ttl` will be used
 
 
 ##### Example
@@ -181,8 +181,8 @@ $zone_file->addMx('example.com.', 20, 'mail2.example.com.');
 
 
 #### addNs(str `ns`[, int `ttl`]) Method
-- `ns` - the host name of the name server.  This must be a fully qualified domain name that ends with a period (i.e. `ns.nameserver.com.`)
-- `ttl` (optional) - the time to live (TTL), in seconds, for the record.  If not specified, the zone file's default `ttl` will be used
+- `ns` - the host name of the name server. This must be a fully qualified domain name that ends with a period (i.e. `ns.nameserver.com.`)
+- `ttl` (optional) - the time to live (TTL), in seconds, for the record. If not specified, the zone file's default `ttl` will be used
 
 
 ##### Example
@@ -235,12 +235,12 @@ www		120		IN		AAAA		2606:2800:220:1:248:1893:25c8:1946
 
 This shell script further automates the process of generating a DNS zone file, and optionally, pushing it to Route 53.
 
-It requires that you have a GitHub repository, like [this](https://github.com/prodctrl/dns-example), with all of your DNS records in a file named `zone-file-generator.php`.  The repo can be public, or private (assuming you have access).
+It requires that you have a GitHub repository, like [this](https://github.com/prodctrl/dns-example), with all of your DNS records in a file named `zone-file-generator.php`. The repo can be public, or private (assuming you have access).
 
 ### Command-Line Parameters
-- `domain` - the domain the zone file is being generated for.  This must be a fully qualified domain name that ends with a period (i.e. `example.com.`)
+- `domain` - the domain the zone file is being generated for. This must be a fully qualified domain name that ends with a period (i.e. `example.com.`)
 - `github_repo` - the GitHub repository that contains your `zone-file-generator.php` file (i.e. `github-username/github-repo-name`)
-- `argX` (optional) - you can pass up to 32 custom arguments to `zone-file-generator.php`.  These will be accessible in PHP using the `$argv[]` array (indexes 3-34), and the values can be pretty much whatever you want.  This feature is useful when the output of your `zone-file-generator.php` script is dynamic
+- `argX` (optional) - you can pass up to 32 custom arguments to `zone-file-generator.php`. These will be accessible in PHP using the `$argv[]` array (indexes 3-34), and the values can be pretty much whatever you want. This feature is useful when the output of your `zone-file-generator.php` script is dynamic
 
 ### Example
 #### Without Custom Arguments
